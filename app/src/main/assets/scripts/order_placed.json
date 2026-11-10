@@ -1,0 +1,25 @@
+[
+  { "text": "Your order is in. I removed the checkout form so it can't be sent twice." },
+  { "version": "v0.9", "deleteSurface": { "surfaceId": "checkout" } },
+  { "delayMs": 400 },
+
+  { "version": "v0.9", "createSurface": {
+      "surfaceId": "order-placed",
+      "catalogId": "https://example.com/a2ui/shop/v1/catalog.json"
+  } },
+
+  { "version": "v0.9", "updateComponents": {
+      "surfaceId": "order-placed",
+      "components": [
+        { "id": "root", "component": "Card", "child": "content" },
+        { "id": "content", "component": "Column", "align": "stretch",
+          "children": ["header", "details", "delivery", "receipt"] },
+        { "id": "header", "component": "Row", "align": "center", "children": ["checkIcon", "headline"] },
+        { "id": "checkIcon", "component": "Icon", "name": "check" },
+        { "id": "headline", "component": "Text", "variant": "h4", "text": "Order placed" },
+        { "id": "details", "component": "Text", "text": "{{quantity}} × {{name}} · EU {{size}}" },
+        { "id": "delivery", "component": "Text", "text": "{{delivery}}" },
+        { "id": "receipt", "component": "Text", "variant": "caption", "text": "Receipt sent to {{email}}" }
+      ]
+  } }
+]

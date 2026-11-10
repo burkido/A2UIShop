@@ -1,0 +1,9 @@
+[
+  { "text": "Done. I changed it to 2 pairs. Only the data changed, so I didn't resend the UI." },
+  { "delayMs": 300 },
+  { "version": "v0.9", "updateDataModel": {
+      "surfaceId": "checkout",
+      "path": "/order/quantity",
+      "value": 2
+  } }
+]

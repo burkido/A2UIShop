@@ -1,0 +1,86 @@
+[
+  { "text": "Good pick. Choose a size and tell me where to send the receipt." },
+  { "delayMs": 400 },
+
+  { "version": "v0.9", "createSurface": {
+      "surfaceId": "checkout",
+      "catalogId": "https://example.com/a2ui/shop/v1/catalog.json"
+  } },
+
+  { "version": "v0.9", "updateDataModel": {
+      "surfaceId": "checkout",
+      "path": "/order",
+      "value": {
+        "productId": "{{productId}}", "name": "{{name}}", "price": "{{price}}", "imageUrl": "{{imageUrl}}",
+        "size": [], "quantity": 1, "express": false, "email": ""
+      }
+  } },
+
+  { "version": "v0.9", "updateComponents": {
+      "surfaceId": "checkout",
+      "components": [
+        { "id": "root", "component": "Card", "child": "content" },
+        { "id": "content", "component": "Column", "align": "stretch",
+          "children": ["product", "divider", "size", "quantityRow", "express", "email", "orderSummary", "placeOrder"] },
+
+        { "id": "product", "component": "Row", "align": "center", "children": ["thumbnail", "productText"] },
+        { "id": "thumbnail", "component": "Image", "variant": "avatar", "fit": "cover",
+          "url": { "path": "/order/imageUrl" }, "description": { "path": "/order/name" } },
+        { "id": "productText", "component": "Column", "children": ["productName", "productPrice"] },
+        { "id": "productName", "component": "Text", "variant": "h5", "text": { "path": "/order/name" } },
+        { "id": "productPrice", "component": "Text",
+          "text": { "call": "formatCurrency", "returnType": "string",
+                    "args": { "value": { "path": "/order/price" }, "currency": "EUR" } } },
+        { "id": "divider", "component": "Divider" },
+
+        { "id": "size", "component": "ChoicePicker", "label": "Size (EU)",
+          "variant": "mutuallyExclusive", "displayStyle": "chips",
+          "options": [
+            { "label": "40", "value": "40" }, { "label": "41", "value": "41" },
+            { "label": "42", "value": "42" }, { "label": "43", "value": "43" },
+            { "label": "44", "value": "44" }, { "label": "45", "value": "45" }
+          ],
+          "value": { "path": "/order/size" } },
+
+        { "id": "quantityRow", "component": "Row", "justify": "spaceBetween", "align": "center",
+          "children": ["quantityLabel", "quantity"] },
+        { "id": "quantityLabel", "component": "Text", "text": "Quantity" },
+        { "id": "quantity", "component": "QuantityStepper", "min": 1, "max": 5,
+          "value": { "path": "/order/quantity" } },
+
+        { "id": "express", "component": "CheckBox", "label": "Express delivery (+€9)",
+          "value": { "path": "/order/express" } },
+
+        { "id": "email", "component": "TextField", "label": "Email for the receipt",
+          "value": { "path": "/order/email" },
+          "checks": [
+            { "condition": { "call": "email", "args": { "value": { "path": "/order/email" } } },
+              "message": "Enter a valid email address." }
+          ] },
+
+        { "id": "orderSummary", "component": "Text", "variant": "caption",
+          "text": { "call": "formatString", "returnType": "string",
+                    "args": { "value": "You're ordering ${/order/quantity} × ${/order/name}" } } },
+
+        { "id": "placeOrder", "component": "Button", "variant": "primary", "child": "placeOrderLabel",
+          "checks": [
+            { "condition": { "call": "required", "args": { "value": { "path": "/order/size" } } },
+              "message": "Choose a size." },
+            { "condition": { "call": "email", "args": { "value": { "path": "/order/email" } } },
+              "message": "Enter a valid email address." }
+          ],
+          "action": { "event": {
+            "name": "placeOrder",
+            "context": {
+              "productId": { "path": "/order/productId" },
+              "name": { "path": "/order/name" },
+              "size": { "path": "/order/size" },
+              "quantity": { "path": "/order/quantity" },
+              "express": { "path": "/order/express" },
+              "email": { "path": "/order/email" }
+            }
+          } } },
+        { "id": "placeOrderLabel", "component": "Text", "text": "Place order" }
+      ]
+  } }
+]

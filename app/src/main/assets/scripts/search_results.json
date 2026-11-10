@@ -1,0 +1,161 @@
+[
+  {
+    "text": "Here are four sneakers I'd look at. Swipe through them and tap one to choose a size."
+  },
+  {
+    "delayMs": 500
+  },
+  {
+    "version": "v0.9",
+    "createSurface": {
+      "surfaceId": "sneaker-results",
+      "catalogId": "https://example.com/a2ui/shop/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "sneaker-results",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "align": "stretch",
+          "children": [
+            "title",
+            "summary",
+            "results"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "delayMs": 600
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "sneaker-results",
+      "components": [
+        {
+          "id": "title",
+          "component": "Text",
+          "variant": "h4",
+          "text": "Sneakers"
+        },
+        {
+          "id": "summary",
+          "component": "Text",
+          "variant": "caption",
+          "text": {
+            "path": "/summary"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "delayMs": 600
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "sneaker-results",
+      "components": [
+        {
+          "id": "results",
+          "component": "List",
+          "direction": "horizontal",
+          "align": "start",
+          "children": {
+            "componentId": "product",
+            "path": "/products"
+          }
+        },
+        {
+          "id": "product",
+          "component": "ProductCard",
+          "productId": {
+            "path": "id"
+          },
+          "name": {
+            "path": "name"
+          },
+          "brand": {
+            "path": "brand"
+          },
+          "price": {
+            "path": "price"
+          },
+          "imageUrl": {
+            "path": "imageUrl"
+          },
+          "rating": {
+            "path": "rating"
+          },
+          "badge": {
+            "path": "badge"
+          },
+          "currency": "EUR",
+          "actionLabel": "Choose size",
+          "action": {
+            "event": {
+              "name": "selectProduct"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "delayMs": 800
+  },
+  {
+    "version": "v0.9",
+    "updateDataModel": {
+      "surfaceId": "sneaker-results",
+      "path": "/",
+      "value": {
+        "summary": "4 results · sorted by rating",
+        "products": [
+          {
+            "id": "drift-knit",
+            "brand": "Northpeak",
+            "name": "Drift Knit Runner",
+            "price": 129,
+            "rating": 4.7,
+            "badge": "Best seller",
+            "imageUrl": "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&q=80"
+          },
+          {
+            "id": "court-classic",
+            "brand": "Fieldmark",
+            "name": "Court Classic",
+            "price": 69,
+            "rating": 4.5,
+            "badge": "-20%",
+            "imageUrl": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600&q=80"
+          },
+          {
+            "id": "studio-low",
+            "brand": "Fieldmark",
+            "name": "Studio Low",
+            "price": 95,
+            "rating": 4.4,
+            "badge": "New",
+            "imageUrl": "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&q=80"
+          },
+          {
+            "id": "night-tempo",
+            "brand": "Northpeak",
+            "name": "Night Tempo",
+            "price": 84.99,
+            "rating": 4.2,
+            "imageUrl": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80"
+          }
+        ]
+      }
+    }
+  }
+]
