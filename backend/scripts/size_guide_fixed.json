@@ -1,0 +1,232 @@
+[
+  {
+    "delayMs": 2500
+  },
+  {
+    "text": "Sorry about that. 'FootScanner3D' isn't in your catalog, so I rebuilt that part as a table."
+  },
+  {
+    "delayMs": 600
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "size-guide",
+      "components": [
+        {
+          "id": "table",
+          "component": "Column",
+          "align": "stretch",
+          "children": [
+            "header",
+            "size40",
+            "size41",
+            "size42",
+            "size43",
+            "size44",
+            "size45"
+          ]
+        },
+        {
+          "id": "header",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "headerEu",
+            "headerUs",
+            "headerCm"
+          ]
+        },
+        {
+          "id": "headerEu",
+          "component": "Text",
+          "weight": 1,
+          "text": "EU",
+          "variant": "caption"
+        },
+        {
+          "id": "headerUs",
+          "component": "Text",
+          "weight": 1,
+          "text": "US",
+          "variant": "caption"
+        },
+        {
+          "id": "headerCm",
+          "component": "Text",
+          "weight": 1,
+          "text": "Foot (cm)",
+          "variant": "caption"
+        },
+        {
+          "id": "size40",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size40Eu",
+            "size40Us",
+            "size40Cm"
+          ]
+        },
+        {
+          "id": "size40Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "40"
+        },
+        {
+          "id": "size40Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "7"
+        },
+        {
+          "id": "size40Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "25.0"
+        },
+        {
+          "id": "size41",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size41Eu",
+            "size41Us",
+            "size41Cm"
+          ]
+        },
+        {
+          "id": "size41Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "41"
+        },
+        {
+          "id": "size41Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "8"
+        },
+        {
+          "id": "size41Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "25.9"
+        },
+        {
+          "id": "size42",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size42Eu",
+            "size42Us",
+            "size42Cm"
+          ]
+        },
+        {
+          "id": "size42Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "42"
+        },
+        {
+          "id": "size42Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "8.5"
+        },
+        {
+          "id": "size42Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "26.5"
+        },
+        {
+          "id": "size43",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size43Eu",
+            "size43Us",
+            "size43Cm"
+          ]
+        },
+        {
+          "id": "size43Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "43"
+        },
+        {
+          "id": "size43Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "9.5"
+        },
+        {
+          "id": "size43Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "27.3"
+        },
+        {
+          "id": "size44",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size44Eu",
+            "size44Us",
+            "size44Cm"
+          ]
+        },
+        {
+          "id": "size44Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "44"
+        },
+        {
+          "id": "size44Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "10"
+        },
+        {
+          "id": "size44Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "28.0"
+        },
+        {
+          "id": "size45",
+          "component": "Row",
+          "justify": "spaceBetween",
+          "children": [
+            "size45Eu",
+            "size45Us",
+            "size45Cm"
+          ]
+        },
+        {
+          "id": "size45Eu",
+          "component": "Text",
+          "weight": 1,
+          "text": "45"
+        },
+        {
+          "id": "size45Us",
+          "component": "Text",
+          "weight": 1,
+          "text": "11"
+        },
+        {
+          "id": "size45Cm",
+          "component": "Text",
+          "weight": 1,
+          "text": "28.9"
+        }
+      ]
+    }
+  }
+]

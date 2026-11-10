@@ -1,0 +1,51 @@
+[
+  {
+    "text": "These three are under €100. I only sent new data, and the list rebuilt its cards from the template."
+  },
+  {
+    "delayMs": 300
+  },
+  {
+    "version": "v0.9",
+    "updateDataModel": {
+      "surfaceId": "sneaker-results",
+      "path": "/summary",
+      "value": "3 results under €100 · sorted by price"
+    }
+  },
+  {
+    "version": "v0.9",
+    "updateDataModel": {
+      "surfaceId": "sneaker-results",
+      "path": "/products",
+      "value": [
+        {
+          "id": "court-classic",
+          "brand": "Fieldmark",
+          "name": "Court Classic",
+          "price": 69,
+          "rating": 4.5,
+          "badge": "-20%",
+          "imageUrl": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600&q=80"
+        },
+        {
+          "id": "night-tempo",
+          "brand": "Northpeak",
+          "name": "Night Tempo",
+          "price": 84.99,
+          "rating": 4.2,
+          "imageUrl": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=600&q=80"
+        },
+        {
+          "id": "studio-low",
+          "brand": "Fieldmark",
+          "name": "Studio Low",
+          "price": 95,
+          "rating": 4.4,
+          "badge": "New",
+          "imageUrl": "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&q=80"
+        }
+      ]
+    }
+  }
+]

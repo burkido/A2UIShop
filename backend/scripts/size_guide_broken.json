@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Measure your foot and compare it with this guide. (Heads up: this reply uses a component that isn't in your app's catalog.)"
+  },
+  {
+    "delayMs": 400
+  },
+  {
+    "version": "v0.9",
+    "createSurface": {
+      "surfaceId": "size-guide",
+      "catalogId": "https://example.com/a2ui/shop/v1/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9",
+    "updateComponents": {
+      "surfaceId": "size-guide",
+      "components": [
+        {
+          "id": "root",
+          "component": "Card",
+          "child": "content"
+        },
+        {
+          "id": "content",
+          "component": "Column",
+          "align": "stretch",
+          "children": [
+            "title",
+            "intro",
+            "table",
+            "footer"
+          ]
+        },
+        {
+          "id": "title",
+          "component": "Text",
+          "variant": "h4",
+          "text": "Size guide"
+        },
+        {
+          "id": "intro",
+          "component": "Text",
+          "text": "Measure your foot from heel to toe, then find your size."
+        },
+        {
+          "id": "table",
+          "component": "FootScanner3D",
+          "mode": "camera",
+          "units": "cm"
+        },
+        {
+          "id": "footer",
+          "component": "Text",
+          "variant": "caption",
+          "text": "Between two sizes? Pick the larger one."
+        }
+      ]
+    }
+  }
+]
